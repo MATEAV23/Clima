@@ -1,50 +1,83 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Aplicación de Clima con React y TypeScript
 
-Currently, two official plugins are available:
+Esta es una aplicación web que permite consultar el clima actual de diferentes ciudades alrededor del mundo utilizando la API de OpenWeather.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- React 18.3
+- TypeScript
+- Vite
+- CSS Modules
+- Zod (para validación de tipos en runtime)
+- Axios (para peticiones HTTP)
+- ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Aprendizajes Clave
 
-- Configure the top-level `parserOptions` property like this:
+- Implementación de TypeScript en un proyecto React
+- Uso de CSS Modules para estilos modulares
+- Manejo de estados y efectos con React Hooks
+- Validación de tipos en runtime con Zod
+- Consumo de APIs externas con Axios
+- Manejo de variables de entorno en Vite
+- Implementación de componentes reutilizables
+- Gestión de formularios controlados
+- Manejo de errores y estados de carga
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Características
+
+- Búsqueda de clima por ciudad y país
+- Muestra temperatura actual, máxima y mínima
+- Interfaz responsiva
+- Manejo de estados de carga y errores
+- Validación de formularios
+- Conversión automática de temperaturas Kelvin a Celsius
+
+## Cómo ejecutar el proyecto
+
+1. Clona el repositorio:
+```bash
+git clone [URL del repositorio]
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Instala las dependencias:
+```bash
+npm install
 ```
+
+3. Crea un archivo `.env` en la raíz del proyecto y agrega tu API key de OpenWeather:
+```bash
+VITE_API_KEY=tu_api_key_aqui
+```
+
+4. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
+
+5. Abre tu navegador en `http://localhost:5173`
+
+## Scripts Disponibles
+
+```bash
+npm run dev      # Inicia el servidor de desarrollo
+npm run build    # Construye la aplicación para producción
+npm run lint     # Ejecuta el linter
+npm run preview  # Previsualiza la versión de producción
+```
+
+## Estructura del Proyecto
+
+El proyecto sigue una estructura modular con:
+- Componentes reutilizables
+- Hooks personalizados
+- Utilidades y tipos TypeScript
+- Estilos modulares con CSS Modules
+- Configuración de TypeScript y ESLint
+
+## Notas Adicionales
+
+- La aplicación requiere una API key válida de OpenWeather para funcionar
+- Los estilos están optimizados para dispositivos móviles y escritorio
+- Se implementan buenas prácticas de TypeScript y React
